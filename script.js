@@ -11,3 +11,10 @@ function generateImages() {
         container.appendChild(img);
     }
 }
+
+const mobileMenuButton = document.querySelector('.mobile-menu-button');
+const navMenu = document.querySelector('.nav-menu');
+
+mobileMenuButton.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
