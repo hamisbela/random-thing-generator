@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Word Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            color: #4a90e2;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #4a90e2;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #357ab8;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <script src="header.js"></script> <!-- Include the header -->
+    <h1>Random Word Generator</h1>
+    <button id="generate">Generate Random Word</button>
+    <div class="result" id="result"></div>
+
+    <script>
+        const words = [
+            "apple", "banana", "cherry", "date", "elderberry", "fig", "grape", "honeydew", "kiwi", "lemon",
+            "mango", "nectarine", "orange", "papaya", "quince", "raspberry", "strawberry", "tangerine", "ugli", "vanilla",
+            "watermelon", "xigua", "yam", "zucchini", "avocado", "blueberry", "cantaloupe", "dragonfruit", "eggplant", "fennel",
+            "garlic", "jalapeno", "kale", "lime", "mushroom", "nutmeg", "olive", "parsley", "quinoa", "radish",
+            "spinach", "tomato", "turnip", "zucchini", "cabbage", "carrot", "celery", "cucumber", "pumpkin", "sweet potato",
+            "broccoli", "cauliflower", "beet", "asparagus", "artichoke", "bell pepper", "chili", "corn", "green bean", "pea",
+            "radicchio", "rhubarb", "squash", "taro", "yam", "zucchini", "cabbage", "carrot", "celery", "cucumber",
+            "pumpkin", "sweet potato", "broccoli", "cauliflower", "beet", "asparagus", "artichoke", "bell pepper", "chili", "corn",
+            "green bean", "pea", "radicchio", "rhubarb", "squash", "taro", "yam", "zucchini"
+        ];
+
+        document.getElementById('generate').addEventListener('click', function() {
+            const randomWord = words[Math.floor(Math.random() * words.length)];
+            document.getElementById('result').textContent = randomWord;
+        });
+    </script>
+</body>
+</html>

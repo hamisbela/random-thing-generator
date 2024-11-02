@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Email Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            color: #4a90e2;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #4a90e2;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #357ab8;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <script src="header.js"></script> <!-- Include the header -->
+    <h1>Random Email Generator</h1>
+    <button id="generate">Generate Random Email</button>
+    <div class="result" id="result"></div>
+
+    <script>
+        const domains = [
+            "example.com", "test.com", "demo.com", "mail.com", "webmail.com", "email.com", "mydomain.com", "random.com", "sample.com", "provider.com",
+            "service.com", "host.com", "domain.com", "site.com", "platform.com", "network.com", "company.com", "business.com", "enterprise.com", "organization.com",
+            "association.com", "group.com", "team.com", "collective.com", "community.com", "society.com", "club.com", "fellowship.com", "union.com", "alliance.com",
+            "partnership.com", "collaboration.com", "cooperation.com", "synergy.com", "connection.com", "link.com", "bond.com", "relationship.com", "networking.com", "interaction.com",
+            "engagement.com", "communication.com", "dialogue.com", "discussion.com", "conversation.com", "exchange.com", "sharing.com", "participation.com", "involvement.com", "contribution.com",
+            "support.com", "assistance.com", "help.com", "guidance.com", "advice.com", "counsel.com", "mentorship.com", "coaching.com", "training.com", "education.com",
+            "learning.com", "knowledge.com", "wisdom.com", "insight.com", "understanding.com", "awareness.com", "perception.com", "recognition.com", "appreciation.com", "value.com"
+        ];
+
+        document.getElementById('generate').addEventListener('click', function() {
+            const randomName = Math.random().toString(36).substring(2, 10); // Random name
+            const randomDomain = domains[Math.floor(Math.random() * domains.length)];
+            const randomEmail = `${randomName}@${randomDomain}`;
+            document.getElementById('result').textContent = randomEmail;
+        });
+    </script>
+</body>
+</html>

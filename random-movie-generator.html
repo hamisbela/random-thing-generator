@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Movie Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            color: #4a90e2;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #4a90e2;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #357ab8;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <script src="header.js"></script> <!-- Include the header -->
+    <h1>Random Movie Generator</h1>
+    <button id="generate">Generate Random Movie</button>
+    <div class="result" id="result"></div>
+
+    <script>
+        const movies = [
+            "Inception", "The Dark Knight", "Interstellar", "The Matrix", "Pulp Fiction", "Fight Club", "Forrest Gump", "The Shawshank Redemption", "The Godfather", "Gladiator",
+            "Titanic", "Avatar", "The Lord of the Rings: The Return of the King", "Star Wars: Episode IV - A New Hope", "Jurassic Park", "The Silence of the Lambs", "The Lion King", "The Avengers", "The Social Network", "The Departed",
+            "The Prestige", "The Green Mile", "Saving Private Ryan", "The Usual Suspects", "The Intouchables", "The Dark Knight Rises", "The Great Gatsby", "The Wolf of Wall Street", "The Shape of Water", "La La Land",
+            "Mad Max: Fury Road", "Black Panther", "Parasite", "Joker", "1917", "Once Upon a Time in Hollywood", "Spider-Man: Into the Spider-Verse", "Coco", "Inside Out", "Zootopia",
+            "Finding Nemo", "Toy Story", "Shrek", "The Incredibles", "Up", "WALL-E", "Frozen", "Moana", "Ratatouille", "Big Hero 6",
+            "Kung Fu Panda", "Despicable Me", "How to Train Your Dragon", "Monsters, Inc.", "The Lego Movie", "Cloudy with a Chance of Meatballs", "The Secret Life of Pets", "Trolls", "The Peanuts Movie", "The Emoji Movie",
+            "Hotel Transylvania", "The Croods", "Sing", "The Boss Baby", "Peter Rabbit", "Paddington", "The Angry Birds Movie", "Smurfs: The Lost Village", "The Nut Job", "The Grinch"
+        ];
+
+        document.getElementById('generate').addEventListener('click', function() {
+            const randomMovie = movies[Math.floor(Math.random() * movies.length)];
+            document.getElementById('result').textContent = randomMovie;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Character Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            color: #4a90e2;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #4a90e2;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #357ab8;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <script src="header.js"></script> <!-- Include the header -->
+    <h1>Random Character Generator</h1>
+    <button id="generate">Generate Random Character</button>
+    <div class="result" id="result"></div>
+
+    <script>
+        const characters = [
+            "Harry Potter", "Hermione Granger", "Ron Weasley", "Albus Dumbledore", "Severus Snape", "Draco Malfoy", "Luna Lovegood", "Neville Longbottom", "Sirius Black", "Rubeus Hagrid",
+            "Frodo Baggins", "Samwise Gamgee", "Gandalf", "Aragorn", "Legolas", "Gimli", "Gollum", "Boromir", "Sauron", "Bilbo Baggins",
+            "Katniss Everdeen", "Peeta Mellark", "Gale Hawthorne", "Haymitch Abernathy", "Effie Trinket", "Primrose Everdeen", "Cinna", "Rue", "Finnick Odair", "Johanna Mason",
+            "Luke Skywalker", "Princess Leia", "Han Solo", "Darth Vader", "Yoda", "Obi-Wan Kenobi", "Chewbacca", "R2-D2", "C-3PO", "Boba Fett",
+            "Sherlock Holmes", "Dr. John Watson", "James Bond", "Hannibal Lecter", "Elizabeth Bennet", "Mr. Darcy", "Jay Gatsby", "Nick Carraway", "Holden Caulfield", "Atticus Finch",
+            "Daisy Buchanan", "Tom Buchanan", "Scarlett O'Hara", "Rhett Butler", "Hester Prynne", "Dimmesdale", "Heathcliff", "Cathy Earnshaw", "Jane Eyre", "Mr. Rochester",
+            "Winnie-the-Pooh", "Piglet", "Eeyore", "Tigger", "Christopher Robin", "Alice", "Mad Hatter", "Cheshire Cat", "White Rabbit", "Queen of Hearts"
+        ];
+
+        document.getElementById('generate').addEventListener('click', function() {
+            const randomCharacter = characters[Math.floor(Math.random() * characters.length)];
+            document.getElementById('result').textContent = randomCharacter;
+        });
+    </script>
+</body>
+</html>
